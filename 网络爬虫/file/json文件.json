@@ -1,0 +1,10 @@
+{
+         "text":"MXCHIP won a prize",
+         "id": 1234,
+         "detail":{
+                      "comp": "MXCHIP.Inc",
+                      "from":"ShangHai",
+                      "focus":"Internet of Things",
+                      "module":[{"k":"EMW3165"},{"k":"EMW3166"},{"k":"EMW3031"},{"k":"EMW3239"}]
+                         }
+      }
