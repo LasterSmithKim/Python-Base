@@ -33,7 +33,7 @@ def ipCrawler(url):
     #print(urlsList)
     #判断重复次数，以显示不同的警告色
     #设置ip重复倍数值
-    multiple = 1
+    multiple = 2
     if dic.get(ipadd)>100:
         print('\033[1;31m%s\033[0m' % (urlsList[0][:-1]) + "  " + '\033[1;31m%s\033[0m' % str(int((dic.get(ipadd) / multiple))) + '\033[1;31m%s\033[0m' % " 次")
     elif dic.get(ipadd)>50:
