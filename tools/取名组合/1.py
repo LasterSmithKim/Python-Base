@@ -1,5 +1,6 @@
 from pypinyin import pinyin, lazy_pinyin, Style
 import os
+from crawlerbm8 import cooking
 
 
 def read_file_as_str():
@@ -26,7 +27,7 @@ if __name__ == "__main__":
     num = len(strs)
     for i in range(0, len(strs)):
         ming = strs[i][0]
-        datastr=("金"+ming+"  "+str(pinyin(ming)[0][0])+"  1" + str(style3(ming)))
+        datastr=(str(ming)+"  "+str(pinyin(ming)[0][0])+"  " + str(style3(ming)) + " " +str(cooking(ming)))
         # 写入文件
         file = os.path.join('to-data1.txt')
         with open(file, 'a+') as f:
