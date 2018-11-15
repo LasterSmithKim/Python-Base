@@ -2,15 +2,21 @@
 import urllib.request
 import urllib.parse
 import ssl
-import re
+import re,os
+
+def read_file_as_str():
+    file_path = os.path.join('basedata.txt')
+    all_the_text = open(file_path).read()
+    return all_the_text
 
 def getHtmlStr(url):
     headers = {
         "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_4) AppleWebKit/537.36 "\
                       "(KHTML, like Gecko) Chrome/68.0.3440.106 Safari/537.36"
     }
-    responese = urllib.request.urlopen(url)
+
     try:
+        responese = urllib.request.urlopen(url)
         return responese.read().decode('gbk')
     except:
         return "未知错误"
@@ -67,6 +73,7 @@ def mingCrawler(url):
     #pat5 = "<td colspan=5 bgcolor=\"#FFFFFF\"><strong>.*? </div></div></td>"
 
 #if __name__ == "__main__":
+
 def cooking(ming):
     ming_gbk = str(ming.encode('gbk'))
     ming_gbkstr = "%" + ming_gbk[4:6] + "%" + ming_gbk[8:-1]
@@ -75,6 +82,19 @@ def cooking(ming):
     x = mingCrawler(url)
     return x
 
+
+
+    '''
+    strs = str(read_file_as_str())
+    num = len(strs)
+    for i in range(0, len(strs)):
+        ming = strs[i][0]
+        ming_gbk = str(ming.encode('gbk'))
+        print(ming_gbk)
+        ming_gbkstr = "%" + ming_gbk[4:6] + "%" + ming_gbk[8:-1]
+        url = str("http://wuxing.bm8.com.cn/zi/" + ming_gbkstr + ".html")
+        print(url)
+    '''
 
 
 
