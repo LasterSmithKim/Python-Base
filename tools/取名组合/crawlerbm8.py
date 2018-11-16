@@ -75,7 +75,10 @@ def mingCrawler(url):
 #if __name__ == "__main__":
 
 def cooking(ming):
-    ming_gbk = str(ming.encode('gbk'))
+    try:
+        ming_gbk = str(ming.encode('gbk'))
+    except:
+        return "未知错误"
     ming_gbkstr = "%" + ming_gbk[4:6] + "%" + ming_gbk[8:-1]
     url = str("http://wuxing.bm8.com.cn/zi/"+ming_gbkstr+".html")
     print(url)
