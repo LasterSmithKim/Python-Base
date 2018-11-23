@@ -55,6 +55,7 @@ def mingCrawler(url,str):
     pat1 = "<span>(\d+)</span>"
     re_1 = re.compile(pat1)
     List1 = re_1.findall(htmlStr)
+    List1.append("0")
     datastr = ("金"+str+"  "+List1[0])
     return datastr
 
@@ -62,7 +63,7 @@ if __name__ == "__main__":
     url = "http://www.sheup.com/xingming_dafen.php"
 
 
-    for line in open('from-data2.txt'):
+    for line in open('to-data2.txt'):
         line = line.strip('\n')
         file = os.path.join('to-data2-end.txt')
         with open(file, 'a+') as f:
