@@ -27,7 +27,9 @@ if __name__ == "__main__":
     num = len(strs)
     for i in range(0, len(strs)):
         ming = strs[i][0]
-        datastr=(str(ming)+"  "+str(pinyin(ming)[0][0])+"  " + str(style3(ming)) + " " +str(cooking(ming)))
+        #datastr = (str(ming) + "  " + str(pinyin(ming)[0][0]) + "  " + str(style3(ming)) + " " + str(cooking(ming)))
+        #datastr=("金" + str(ming)+"  "+str(pinyin(ming)[0][0])+"  " + str(style3(ming)))
+        datastr = ("金" + str(ming) + "  " + str(pinyin(ming)[0][0]) + "  " +  str(ming))
         # 写入文件
         file = os.path.join('to-data1.txt')
         with open(file, 'a+') as f:
